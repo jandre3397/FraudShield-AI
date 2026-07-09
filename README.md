@@ -95,7 +95,3 @@ At least one improvement attempt will be included, such as:
 - Evaluation metrics
 - Confusion matrix
 - Improvement attempt
-
-## Presentation Date
-
-Friday, July 17, 2026
