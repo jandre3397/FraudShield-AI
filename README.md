@@ -1,189 +1,292 @@
-# Credit Card Fraud Detection with Deep Learning
+
+# FraudShield-AI
+
+### A Deep Learning-Based Credit Card Fraud Detection System
+
+---
 
 ## Overview
 
-Credit card fraud is a growing challenge for financial institutions worldwide, resulting in billions of dollars in losses each year. As digital payment systems continue to expand, organizations require intelligent systems capable of identifying potentially fraudulent transactions quickly and accurately while minimizing disruptions to legitimate customers.
+FraudShield-AI is a deep learning solution designed to detect fraudulent credit card transactions using TensorFlow and Keras. The system leverages historical transaction data to train a neural network capable of classifying transactions as either legitimate or fraudulent.
 
-This project develops a deep learning solution using TensorFlow and Keras to classify credit card transactions as either legitimate or fraudulent. By leveraging a feedforward neural network trained on historical transaction data, the model learns complex patterns associated with fraudulent activity and provides real-time fraud risk predictions.
+Credit card fraud continues to be one of the most significant challenges facing financial institutions, payment processors, and consumers. As digital transactions increase in volume and complexity, traditional rule-based fraud detection systems often struggle to identify evolving fraud patterns while minimizing false positives.
 
-The primary objective is to build a robust binary classification model that maximizes fraud detection while minimizing false positives, helping financial institutions reduce financial losses and improve customer trust.
-
----
-
-## Business Problem
-
-Traditional rule-based fraud detection systems struggle to identify evolving fraud patterns and often generate large numbers of false alarms. Fraudulent transactions represent only a very small percentage of all credit card activity, making fraud detection a highly imbalanced classification problem.
-
-Financial institutions need intelligent models capable of:
-
-- Detecting fraudulent transactions before they are approved
-- Reducing financial losses caused by fraud
-- Minimizing false positives that inconvenience legitimate customers
-- Adapting to changing fraud patterns through machine learning
-
-This project explores how deep learning can improve fraud detection by learning complex relationships within transaction data.
+FraudShield-AI explores how deep learning can improve fraud detection by learning complex relationships within transaction data, allowing financial organizations to identify suspicious transactions more accurately and efficiently.
 
 ---
 
-## Solution
+# Project Status
 
-This project implements a supervised deep learning model using TensorFlow and Keras.
+🚧 **Active Development**
 
-The model analyzes historical credit card transaction data and predicts whether a new transaction is:
+Current Progress
 
-- Legitimate
-- Fraudulent
-
-The project follows a complete machine learning workflow:
-
-1. Data Exploration
-2. Data Cleaning and Preprocessing
-3. Feature Scaling
-4. Model Development
-5. Model Training
-6. Performance Evaluation
-7. Model Optimization
-8. Error Analysis
+* ✅ Repository Setup
+* ✅ Project Planning
+* ⬜ Data Collection
+* ⬜ Exploratory Data Analysis (EDA)
+* ⬜ Data Preprocessing
+* ⬜ Neural Network Development
+* ⬜ Model Training
+* ⬜ Model Evaluation
+* ⬜ Model Optimization
+* ⬜ Final Documentation
+* ⬜ Presentation
 
 ---
 
-## Dataset
+# Business Problem
 
-The model is trained using the publicly available **Credit Card Fraud Detection** dataset published on Kaggle.
+Financial institutions process millions of transactions every day. While only a very small percentage of these transactions are fraudulent, failing to detect them can result in substantial financial losses and reduced customer confidence.
 
-Dataset:
-https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+Traditional fraud detection systems typically rely on manually created rules that become less effective as fraud techniques evolve. Machine learning offers the ability to identify hidden patterns in transaction data and continuously improve fraud detection performance.
 
-Dataset characteristics:
-
-- 284,807 credit card transactions
-- 492 fraudulent transactions
-- 30 numerical features
-- Binary classification target
-
-To protect customer privacy, the majority of features have been transformed using Principal Component Analysis (PCA). Only the **Time** and **Amount** features remain in their original form.
+FraudShield-AI addresses this challenge by developing a binary classification model capable of distinguishing fraudulent transactions from legitimate ones using deep learning.
 
 ---
 
-## Technologies
+# Project Objectives
 
-- Python
-- TensorFlow
-- Keras
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
+The primary objectives of this project are to:
+
+* Build a deep learning model capable of detecting fraudulent credit card transactions.
+* Develop a complete end-to-end machine learning workflow.
+* Evaluate model performance using metrics appropriate for highly imbalanced datasets.
+* Compare baseline and optimized models.
+* Demonstrate industry-standard machine learning practices using TensorFlow and Keras.
 
 ---
 
-## Machine Learning Pipeline
+# Key Features
 
-The project follows a production-style workflow:
-
-### Data Collection
-
-Load and inspect transaction data.
-
-### Exploratory Data Analysis
-
-- Analyze class imbalance
-- Visualize fraud distribution
-- Explore feature relationships
-
-### Data Preprocessing
-
-- Scale numerical features
-- Split training and testing data
-- Handle severe class imbalance
-
-### Model Development
-
-Build a feedforward neural network using TensorFlow/Keras.
-
-The baseline architecture includes:
-
-- Dense input layer
-- Hidden Dense layers
-- Dropout regularization
-- Sigmoid output layer
+* Binary classification using a Dense Neural Network (Multilayer Perceptron)
+* TensorFlow and Keras implementation
+* Complete data preprocessing pipeline
+* Feature scaling
+* Model evaluation using multiple performance metrics
+* Confusion Matrix and ROC analysis
+* Model optimization through hyperparameter tuning
+* Modular Python project structure
+* Professional documentation
 
 ---
 
-## Model Evaluation
+# Dataset
 
-The model will be evaluated using metrics appropriate for highly imbalanced datasets.
+FraudShield-AI uses the publicly available **Credit Card Fraud Detection** dataset provided by Kaggle.
 
-Metrics include:
+**Dataset Source**
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC
-- Confusion Matrix
+[https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
-Special emphasis is placed on **Recall**, since missing fraudulent transactions can result in significant financial loss.
+### Dataset Overview
 
----
+* 284,807 credit card transactions
+* 492 fraudulent transactions
+* 30 numerical input features
+* Binary classification target
 
-## Model Improvement
+Target values:
 
-Several optimization strategies will be explored, including:
+* **0** → Legitimate Transaction
+* **1** → Fraudulent Transaction
 
-- Hyperparameter tuning
-- Additional hidden layers
-- Dropout regularization
-- Class weighting
-- Learning rate optimization
-- Decision threshold adjustment
+To protect customer privacy, the original transaction features have been anonymized using Principal Component Analysis (PCA). As a result, the majority of variables are labeled **V1–V28**, while the **Time** and **Amount** features remain in their original form.
 
-Performance improvements will be compared against the baseline model.
+One of the most significant challenges presented by this dataset is its severe class imbalance, as fraudulent transactions account for approximately **0.17%** of all observations. This makes fraud detection a particularly challenging machine learning problem and requires evaluation metrics beyond simple accuracy.
 
 ---
 
-## Expected Outcome
+# Technology Stack
 
-The completed model will be capable of predicting whether a transaction is likely fraudulent based on historical transaction patterns.
+Programming Language
 
-Although this project is intended for educational purposes, it mirrors the workflow used by machine learning engineers and data scientists developing fraud detection systems within the financial industry.
+* Python
+
+Machine Learning
+
+* TensorFlow
+* Keras
+* Scikit-learn
+
+Data Processing
+
+* Pandas
+* NumPy
+
+Visualization
+
+* Matplotlib
+* Seaborn
+
+Development Environment
+
+* Jupyter Notebook
+* Visual Studio Code
+* Git
+* GitHub
 
 ---
 
-## Repository Structure
+# Machine Learning Workflow
+
+FraudShield-AI follows an end-to-end machine learning pipeline similar to those used in production environments.
+
+## 1. Data Collection
+
+* Load transaction dataset
+* Validate dataset integrity
+
+## 2. Exploratory Data Analysis
+
+* Examine class distribution
+* Identify feature relationships
+* Visualize fraud frequency
+* Analyze transaction characteristics
+
+## 3. Data Preprocessing
+
+* Handle missing values (if applicable)
+* Scale numerical features
+* Split training and testing datasets
+* Address class imbalance
+
+## 4. Model Development
+
+Develop a Dense Neural Network using TensorFlow and Keras.
+
+Planned architecture:
+
+* Input Layer
+* Dense Hidden Layer
+* Dropout Layer
+* Dense Hidden Layer
+* Output Layer (Sigmoid Activation)
+
+## 5. Model Training
+
+* Binary Cross-Entropy Loss
+* Adam Optimizer
+* Validation Dataset
+* Early Stopping (if applicable)
+
+## 6. Model Evaluation
+
+Evaluate performance using:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* ROC-AUC
+* Confusion Matrix
+
+Special emphasis will be placed on **Recall**, as failing to identify fraudulent transactions may result in significant financial losses.
+
+## 7. Model Optimization
+
+Potential optimization strategies include:
+
+* Additional hidden layers
+* Dropout regularization
+* Class weighting
+* Learning rate tuning
+* Batch size optimization
+* Decision threshold adjustment
+
+Performance improvements will be measured against the baseline model.
+
+---
+
+# Project Architecture
 
 ```text
-credit-card-fraud-detection/
-
-├── data/
-├── notebooks/
-├── src/
-├── models/
-├── images/
-├── presentation/
-├── README.md
-├── requirements.txt
-└── LICENSE
+                    Credit Card Dataset
+                             │
+                             ▼
+                Exploratory Data Analysis
+                             │
+                             ▼
+                  Data Preprocessing
+                             │
+                             ▼
+                Feature Scaling & Split
+                             │
+                             ▼
+            Dense Neural Network (TensorFlow)
+                             │
+                             ▼
+                    Model Training
+                             │
+                             ▼
+                  Performance Evaluation
+                             │
+                             ▼
+                   Model Optimization
+                             │
+                             ▼
+                     Final Model
 ```
 
 ---
 
-## Future Enhancements
+# Repository Structure
 
-Future versions of this project may include:
+```text
+FraudShield-AI/
 
-- Real-time prediction API using FastAPI
-- Docker containerization
-- Cloud deployment (AWS or Azure)
-- Automated model retraining pipeline
-- Explainable AI using SHAP
-- Interactive dashboard with Streamlit
+├── data/               # Raw and processed datasets
+├── docs/               # Project documentation
+├── images/             # Figures and visualizations
+├── models/             # Saved trained models
+├── notebooks/          # Exploratory notebooks
+├── presentation/       # Presentation materials
+├── src/                # Source code
+│   ├── config.py
+│   ├── data_loader.py
+│   ├── preprocessing.py
+│   ├── model.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── utils.py
+├── tests/              # Unit tests
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
 
 ---
 
-## Contributors
+# Future Enhancements
 
-- Jaël Andre
-- Amaya Washington
+Future versions of FraudShield-AI may include:
+
+* Real-time fraud prediction API using FastAPI
+* Interactive dashboard with Streamlit
+* Docker containerization
+* Cloud deployment on AWS
+* Automated model retraining pipeline
+* Explainable AI using SHAP
+* CI/CD integration with GitHub Actions
+* Model monitoring and performance tracking
+
+---
+
+# Contributors
+
+* **Jaël Andre**
+* **Amaya Washington**
+
+---
+
+# License
+
+This project is licensed under the terms of the MIT License.
+
+---
+
+## Acknowledgments
+
+This project uses the publicly available Credit Card Fraud Detection dataset made available by the Machine Learning Group (MLG) of Université Libre de Bruxelles and distributed through Kaggle for research and educational purposes.
+
+I also recommend adding a project logo and a few badges (Python, TensorFlow, License, Status) at the top later. Those small touches make a GitHub repository look even more polished and professional.
