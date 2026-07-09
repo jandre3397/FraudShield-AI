@@ -1,97 +1,189 @@
-# Credit Card Fraud Detection Using TensorFlow/Keras
+# Credit Card Fraud Detection with Deep Learning
 
-## Project Overview
+## Overview
 
-This project uses a neural network to classify credit card transactions as either legitimate or fraudulent. The goal is to build a TensorFlow/Keras model that can identify fraudulent transactions from tabular transaction data.
+Credit card fraud is a growing challenge for financial institutions worldwide, resulting in billions of dollars in losses each year. As digital payment systems continue to expand, organizations require intelligent systems capable of identifying potentially fraudulent transactions quickly and accurately while minimizing disruptions to legitimate customers.
 
-## Problem Statement
+This project develops a deep learning solution using TensorFlow and Keras to classify credit card transactions as either legitimate or fraudulent. By leveraging a feedforward neural network trained on historical transaction data, the model learns complex patterns associated with fraudulent activity and provides real-time fraud risk predictions.
 
-Credit card fraud is a major issue for banks, credit card companies, and customers. Fraudulent transactions can result in financial losses and security concerns. This project aims to create a binary classification model that predicts whether a transaction is fraudulent or legitimate.
+The primary objective is to build a robust binary classification model that maximizes fraud detection while minimizing false positives, helping financial institutions reduce financial losses and improve customer trust.
+
+---
+
+## Business Problem
+
+Traditional rule-based fraud detection systems struggle to identify evolving fraud patterns and often generate large numbers of false alarms. Fraudulent transactions represent only a very small percentage of all credit card activity, making fraud detection a highly imbalanced classification problem.
+
+Financial institutions need intelligent models capable of:
+
+- Detecting fraudulent transactions before they are approved
+- Reducing financial losses caused by fraud
+- Minimizing false positives that inconvenience legitimate customers
+- Adapting to changing fraud patterns through machine learning
+
+This project explores how deep learning can improve fraud detection by learning complex relationships within transaction data.
+
+---
+
+## Solution
+
+This project implements a supervised deep learning model using TensorFlow and Keras.
+
+The model analyzes historical credit card transaction data and predicts whether a new transaction is:
+
+- Legitimate
+- Fraudulent
+
+The project follows a complete machine learning workflow:
+
+1. Data Exploration
+2. Data Cleaning and Preprocessing
+3. Feature Scaling
+4. Model Development
+5. Model Training
+6. Performance Evaluation
+7. Model Optimization
+8. Error Analysis
+
+---
 
 ## Dataset
 
-The dataset used for this project is the Credit Card Fraud Detection dataset from Kaggle.
+The model is trained using the publicly available **Credit Card Fraud Detection** dataset published on Kaggle.
 
-Dataset link: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+Dataset:
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
-The dataset contains credit card transactions made by European cardholders. The target column is `Class`.
+Dataset characteristics:
 
-- `0` = Legitimate transaction
-- `1` = Fraudulent transaction
+- 284,807 credit card transactions
+- 492 fraudulent transactions
+- 30 numerical features
+- Binary classification target
 
-Most features are anonymized for privacy and labeled as `V1` through `V28`. The dataset also includes `Time` and `Amount`.
+To protect customer privacy, the majority of features have been transformed using Principal Component Analysis (PCA). Only the **Time** and **Amount** features remain in their original form.
 
-## Project Type
+---
 
-Option 3: Tabular Classification with a Dense Neural Network
-
-## Tools and Libraries
+## Technologies
 
 - Python
-- TensorFlow/Keras
+- TensorFlow
+- Keras
 - Pandas
 - NumPy
 - Scikit-learn
 - Matplotlib
 - Seaborn
+- Jupyter Notebook
 
-## Planned Workflow
+---
 
-1. Load the dataset
-2. Explore the data
-3. Preprocess the features
-4. Split data into training and testing sets
-5. Build a Dense neural network
-6. Train the model
-7. Evaluate performance
-8. Improve the model
-9. Present results and limitations
+## Machine Learning Pipeline
 
-## Model Plan
+The project follows a production-style workflow:
 
-The project will use a Dense neural network because the dataset is tabular numerical data.
+### Data Collection
 
-Planned architecture:
+Load and inspect transaction data.
 
-- Input layer
-- Dense hidden layers with ReLU activation
-- Dropout layer to reduce overfitting
-- Sigmoid output layer for binary classification
+### Exploratory Data Analysis
 
-## Evaluation Metrics
+- Analyze class imbalance
+- Visualize fraud distribution
+- Explore feature relationships
 
-Because the dataset is highly imbalanced, accuracy alone is not enough. The model will be evaluated using:
+### Data Preprocessing
+
+- Scale numerical features
+- Split training and testing data
+- Handle severe class imbalance
+
+### Model Development
+
+Build a feedforward neural network using TensorFlow/Keras.
+
+The baseline architecture includes:
+
+- Dense input layer
+- Hidden Dense layers
+- Dropout regularization
+- Sigmoid output layer
+
+---
+
+## Model Evaluation
+
+The model will be evaluated using metrics appropriate for highly imbalanced datasets.
+
+Metrics include:
 
 - Accuracy
 - Precision
 - Recall
-- F1-score
-- Confusion matrix
+- F1 Score
+- ROC-AUC
+- Confusion Matrix
 
-## Improvement Attempt
+Special emphasis is placed on **Recall**, since missing fraudulent transactions can result in significant financial loss.
 
-At least one improvement attempt will be included, such as:
+---
 
-- Adding dropout
-- Using class weights
-- Changing the learning rate
-- Adjusting the prediction threshold
-- Comparing model architectures
+## Model Improvement
 
-## Team Responsibilities
+Several optimization strategies will be explored, including:
 
-### Partner 1: Data and Preprocessing Lead
+- Hyperparameter tuning
+- Additional hidden layers
+- Dropout regularization
+- Class weighting
+- Learning rate optimization
+- Decision threshold adjustment
 
-- Dataset explanation
-- Data exploration
-- Class distribution analysis
-- Preprocessing
-- Visualizations
+Performance improvements will be compared against the baseline model.
 
-### Partner 2: Model and Evaluation Lead
+---
 
-- Neural network architecture
-- Model training
-- Evaluation metrics
-- Confusion matrix
-- Improvement attempt
+## Expected Outcome
+
+The completed model will be capable of predicting whether a transaction is likely fraudulent based on historical transaction patterns.
+
+Although this project is intended for educational purposes, it mirrors the workflow used by machine learning engineers and data scientists developing fraud detection systems within the financial industry.
+
+---
+
+## Repository Structure
+
+```text
+credit-card-fraud-detection/
+
+├── data/
+├── notebooks/
+├── src/
+├── models/
+├── images/
+├── presentation/
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
+
+---
+
+## Future Enhancements
+
+Future versions of this project may include:
+
+- Real-time prediction API using FastAPI
+- Docker containerization
+- Cloud deployment (AWS or Azure)
+- Automated model retraining pipeline
+- Explainable AI using SHAP
+- Interactive dashboard with Streamlit
+
+---
+
+## Contributors
+
+- Jaël Andre
+- Amaya Washington
