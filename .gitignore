@@ -216,3 +216,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+####################################################
+# FraudShield-AI Project
+####################################################
+
+# Raw and processed datasets
+data/raw/
+data/processed/
+
+# Saved TensorFlow/Keras models
+models/
+
+# Training artifacts
+*.keras
+*.h5
+*.ckpt
+
+# macOS
+.DS_Store
