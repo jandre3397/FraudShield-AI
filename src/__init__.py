@@ -1,0 +1,3 @@
+"""
+FraudShield-AI source package.
+"""
